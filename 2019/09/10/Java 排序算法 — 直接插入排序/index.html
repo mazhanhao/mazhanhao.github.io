@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://mazhanhao.top">
-  <title>Dr.Ma&#39;s Blog</title>
+  <title>Java 排序算法 — 直接插入排序 | Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dr.Ma&#39;s Blog">
-<meta property="og:url" content="http://mazhanhao.top/page/2/index.html">
+  <meta name="description" content="出处：https://github.com/iTimeTraveler/SortAlgorithms 插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 排序算法 — 直接插入排序">
+<meta property="og:url" content="http://mazhanhao.top/2019/09/10/Java 排序算法 — 直接插入排序/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="出处：https://github.com/iTimeTraveler/SortAlgorithms 插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//insert-sort.gif">
+<meta property="og:updated_time" content="2019-09-10T04:01:51.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dr.Ma&#39;s Blog">
-<meta name="twitter:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="Java 排序算法 — 直接插入排序">
+<meta name="twitter:description" content="出处：https://github.com/iTimeTraveler/SortAlgorithms 插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相">
+<meta name="twitter:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
   
@@ -159,16 +163,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Junit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java 排序算法 — 直接插入排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/08/30/Junit/" class="archive-article-date">
-  	<time datetime="2019-08-30T07:17:51.841Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+        <a href="/2019/09/10/Java 排序算法 — 直接插入排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T03:58:29.169Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -176,21 +178,86 @@
     <div class="article-entry" itemprop="articleBody">
 	<center><p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/08/30/Junit/">8/30 JunitTest</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      Java 排序算法 — 直接插入排序
     </h1>
   
 </p></center>
       
-        <p>1.Junit</p>
-<p>2.反射</p>
-<p>3.注解</p>
-<h2 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h2>
-        
-          <a class="article-more-a" href="/2019/08/30/Junit/#more">展开全文 >></a>
-        
+        <p>出处：<a href="https://github.com/iTimeTraveler/SortAlgorithms" target="_blank" rel="noopener">https://github.com/iTimeTraveler/SortAlgorithms</a></p>
+<p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
+<p>插入排序由于操作不尽相同, 可分为 <code>直接插入排序</code> , <code>折半插入排序</code>(又称二分插入排序), <code>链表插入排序</code> , <code>希尔排序</code> 。我们先来看下直接插入排序。</p>
+<h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p>直接插入排序的基本思想是：将数组中的所有元素依次跟前面已经排好的元素相比较，如果选择的元素比已排序的元素小，则交换，直到全部元素都比较过为止。</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif" alt="使用插入排序为一列数字进行排序的过程"></a></p>
+<h2 id="2、算法描述"><a href="#2、算法描述" class="headerlink" title="2、算法描述"></a>2、算法描述</h2><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<p>①. 从第一个元素开始，该元素可以认为已经被排序</p>
+<p>②. 取出下一个元素，在已经排序的元素序列中从后向前扫描</p>
+<p>③. 如果该元素（已排序）大于新元素，将该元素移到下一位置</p>
+<p>④. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</p>
+<p>⑤. 将新元素插入到该位置后</p>
+<p>⑥. 重复步骤②~⑤</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//insert-sort.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//insert-sort.gif" alt="img"></a></p>
+<p>算法实现中比较有意思的一点是，在每次比较操作发现取出来的新元素小于等于已排序的元素时，可以将已排序的元素移到下一位置，然后将取出来的新元素插入该位置（即相邻位置对调），接着再与前面的已排序的元素进行比较，如上图所示，这样做缺点是交换操作代价比较大。另一种做法是：将新元素取出（挖坑），从左到右依次与已排序的元素比较，如果已排序的元素大于取出的新元素，那么将该元素移动到下一个位置（填坑），接着再与前面的已排序的元素比较，直到找到已排序的元素小于等于新元素的位置，这时再将新元素插入进去。就像基本思想中的动图演示的那样。</p>
+<p>如果<strong>比较操作</strong>的代价比<strong>交换操作</strong>大的话，可以采用<a href="https://zh.wikipedia.org/wiki/二分查找法" target="_blank" rel="noopener">二分查找法</a>来减少<em>比较操作</em>的数目。可以认为是<strong>插入排序</strong>的一个变种，称为<a href="https://zh.wikipedia.org/w/index.php?title=二分查找插入排序&action=edit&redlink=1" target="_blank" rel="noopener">二分查找插入排序</a>。</p>
+<h2 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 插入排序</span><br><span class="line"> *</span><br><span class="line"> * 1\. 从第一个元素开始，该元素可以认为已经被排序</span><br><span class="line"> * 2\. 取出下一个元素，在已经排序的元素序列中从后向前扫描</span><br><span class="line"> * 3\. 如果该元素（已排序）大于新元素，将该元素移到下一位置</span><br><span class="line"> * 4\. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</span><br><span class="line"> * 5\. 将新元素插入到该位置后</span><br><span class="line"> * 6\. 重复步骤2~5</span><br><span class="line"> * @param arr  待排序数组</span><br><span class="line"> */</span><br><span class="line">public static void insertionSort(int[] arr)&#123;</span><br><span class="line"> for( int i = 1; i &lt; arr.length; i++ ) &#123;</span><br><span class="line"> int temp = arr[i];    // 取出下一个元素，在已经排序的元素序列中从后向前扫描</span><br><span class="line"> for( int j = i; j &gt;= 0; j-- ) &#123;</span><br><span class="line"> if( j &gt; 0 &amp;&amp; arr[j-1] &gt; temp ) &#123;</span><br><span class="line"> arr[j] = arr[j-1];    // 如果该元素（已排序）大于取出的元素temp，将该元素移到下一位置</span><br><span class="line"> System.out.println(&quot;Temping:  &quot; + Arrays.toString(arr));</span><br><span class="line"> &#125; else &#123;</span><br><span class="line"> // 将新元素插入到该位置后</span><br><span class="line"> arr[j] = temp;</span><br><span class="line"> System.out.println(&quot;Sorting:  &quot; + Arrays.toString(arr));</span><br><span class="line"> break;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 交换次数较多的实现</span><br><span class="line">public static void insertionSort(int[] arr)&#123;</span><br><span class="line"> for( int i=0; i&lt;arr.length-1; i++ ) &#123;</span><br><span class="line"> for( int j=i+1; j&gt;0; j-- ) &#123;</span><br><span class="line"> if( arr[j-1] &lt;= arr[j] )</span><br><span class="line"> break;</span><br><span class="line"> int temp = arr[j];      //交换操作</span><br><span class="line"> arr[j] = arr[j-1];</span><br><span class="line"> arr[j-1] = temp;</span><br><span class="line"> System.out.println(&quot;Sorting:  &quot; + Arrays.toString(arr));</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>直接插入排序复杂度如下：</p>
+<ul>
+<li>最好情况下，排序前对象已经按照要求的有序。比较次数(KCN)：n−1n−1；移动次数(RMN)为00。则对应的时间复杂度为O(n)O(n)。</li>
+<li>最坏情况下，排序前对象为要求的顺序的反序。第i趟时第i个对象必须与前面i个对象都做排序码比较，并且每做1次比较就要做1次数据移动（从上面给出的代码中看出）。比较次数(KCN)：∑n−1i=1i=n(n−1)2≈n22∑i=1n−1i=n(n−1)2≈n22 ;   移动次数(RMN)为：∑n−1i=1i=n(n−1)2≈n22∑i=1n−1i=n(n−1)2≈n22。则对应的时间复杂度为O(n2)O(n2)。</li>
+<li>如果排序记录是随机的，那么根据概率相同的原则，在平均情况下的排序码比较次数和对象移动次数约为n22n22，因此，<strong>直接插入排序的平均时间复杂度</strong> 为O(n2)O(n2)。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>平均时间复杂度</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(n²)</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>Tips: 由于直接插入排序每次只移动一个元素的位， 并不会改变值相同的元素之间的排序， 因此它是一种稳定排序。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -201,10 +268,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mazhanhao.top/2019/09/10/Java 排序算法 — 直接插入排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/02/qq/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">test</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -224,84 +354,14 @@
 
 
 
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/08/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-08-29T13:38:08.913Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/08/29/hello-world/">Hello World</a>
-    </h1>
-  
-</p></center>
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -324,8 +384,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
