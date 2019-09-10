@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://mazhanhao.top">
-  <title>Dr.Ma&#39;s Blog</title>
+  <title>Java 排序算法 — 简单选择排序 | Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dr.Ma&#39;s Blog">
-<meta property="og:url" content="http://mazhanhao.top/index.html">
+  <meta name="description" content="“选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。”)选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。  从算法逻辑上看，选择排序是一种简单直观的排序算法，在简单选择排序过程中，所需移动记录的次数比较少。">
+<meta name="keywords" content="Java排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 排序算法 — 简单选择排序">
+<meta property="og:url" content="http://mazhanhao.top/2019/09/10/Java 排序算法 — 简单选择排序/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="“选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。”)选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。  从算法逻辑上看，选择排序是一种简单直观的排序算法，在简单选择排序过程中，所需移动记录的次数比较少。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://itimetraveler.github.io/gallery/sort-algorithms/Selection-Sort-Animation.gif">
+<meta property="og:updated_time" content="2019-09-10T04:39:02.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dr.Ma&#39;s Blog">
-<meta name="twitter:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="Java 排序算法 — 简单选择排序">
+<meta name="twitter:description" content="“选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。”)选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。  从算法逻辑上看，选择排序是一种简单直观的排序算法，在简单选择排序过程中，所需移动记录的次数比较少。">
+<meta name="twitter:image" content="https://itimetraveler.github.io/gallery/sort-algorithms/Selection-Sort-Animation.gif">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
   
@@ -159,16 +163,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java 排序算法 — 总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java 排序算法 — 简单选择排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/09/10/Java 排序算法 — 总结/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:33:52.144Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/09/10/Java 排序算法 — 简单选择排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T04:28:24.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -176,20 +178,77 @@
     <div class="article-entry" itemprop="articleBody">
 	<center><p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 总结/">Java 排序算法 — 总结</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      Java 排序算法 — 简单选择排序
     </h1>
   
 </p></center>
       
-        <blockquote>
-<p>各种排序性能对比如下，有些排序未详细介绍，暂且放到这里。实例测试结果可以看这里：<a href="https://github.com/iTimeTraveler/SortAlgorithms/blob/master/BENCH_RESULT.md" target="_blank" rel="noopener"><strong>八大排序算法耗时对比</strong></a>。</p>
+        <p><a href="https://itimetraveler.github.io/gallery/sort-algorithms/Selection-Sort-Animation.gif" target="_blank" rel="noopener"><img src="https://itimetraveler.github.io/gallery/sort-algorithms/Selection-Sort-Animation.gif" alt="img"></a></p>
+<blockquote>
+<p>“选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。”)选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。</p>
 </blockquote>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 总结/#more">展开全文 >></a>
-        
+<p>从算法逻辑上看，选择排序是一种简单直观的排序算法，在简单选择排序过程中，所需移动记录的次数比较少。</p>
+<a id="more"></a>
+
+<h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p>选择排序的基本思想：比较 + 交换。</p>
+<p>在未排序序列中找到最小（大）元素，存放到未排序序列的起始位置。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
+<h2 id="2、算法描述"><a href="#2、算法描述" class="headerlink" title="2、算法描述"></a>2、算法描述</h2><p>①. 从待排序序列中，找到关键字最小的元素；<br> ②. 如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换；<br> ③. 从余下的 N – 1 个元素中，找出关键字最小的元素，重复①、②步，直到排序结束。</p>
+<h2 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h2><p>选择排序比较简单，以下是我自己的实现，跟官方版差不多，所以完全可以参考。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 选择排序</span><br><span class="line"> *</span><br><span class="line"> * 1\. 从待排序序列中，找到关键字最小的元素；</span><br><span class="line"> * 2\. 如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换；</span><br><span class="line"> * 3\. 从余下的 N - 1 个元素中，找出关键字最小的元素，重复①、②步，直到排序结束。</span><br><span class="line"> *    仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</span><br><span class="line"> * @param arr  待排序数组</span><br><span class="line"> */</span><br><span class="line">public static void selectionSort(int[] arr)&#123;</span><br><span class="line"> for(int i = 0; i &lt; arr.length-1; i++)&#123;</span><br><span class="line"> int min = i;</span><br><span class="line"> for(int j = i+1; j &lt; arr.length; j++)&#123;    //选出之后待排序中值最小的位置</span><br><span class="line"> if(arr[j] &lt; arr[min])&#123;</span><br><span class="line"> min = j;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> if(min != i)&#123;</span><br><span class="line"> int temp = arr[min];      //交换操作</span><br><span class="line"> arr[min] = arr[i];</span><br><span class="line"> arr[i] = temp;</span><br><span class="line"> System.out.println(&quot;Sorting:  &quot; + Arrays.toString(arr));</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下是选择排序复杂度:</p>
+<table>
+<thead>
+<tr>
+<th>平均时间复杂度</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>选择排序的简单和直观名副其实，这也造就了它”出了名的慢性子”，无论是哪种情况，哪怕原数组已排序完成，它也将花费将近n²/2次遍历来确认一遍。即便是这样，它的排序结果也还是不稳定的。 唯一值得高兴的是，它并不耗费额外的内存空间。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -211,10 +270,82 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mazhanhao.top/2019/09/10/Java 排序算法 — 简单选择排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/10/Java 排序算法 — 基数排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java 排序算法 — 基数排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/10/Java 排序算法 — 直接插入排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 排序算法 — 直接插入排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -234,85 +365,14 @@
 
 
 
-
-  
-    <article id="post-Java 排序算法 — 快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/09/10/Java 排序算法 — 快速排序/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:30:38.744Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 快速排序/">Java 排序算法 — 快速排序</a>
-    </h1>
-  
-</p></center>
-      
-        <p>快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。</p>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 快速排序/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -335,8 +395,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

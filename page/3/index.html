@@ -11,7 +11,7 @@
   <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dr.Ma&#39;s Blog">
-<meta property="og:url" content="http://mazhanhao.top/index.html">
+<meta property="og:url" content="http://mazhanhao.top/page/3/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
 <meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
 <meta property="og:locale" content="en">
@@ -161,14 +161,14 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Java 排序算法 — 总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java 排序算法 — 简单选择排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/09/10/Java 排序算法 — 总结/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:33:52.144Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/09/10/Java 排序算法 — 简单选择排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T04:28:24.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -177,16 +177,18 @@
 	<center><p>
   
     <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 总结/">Java 排序算法 — 总结</a>
+      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 简单选择排序/">Java 排序算法 — 简单选择排序</a>
     </h1>
   
 </p></center>
       
-        <blockquote>
-<p>各种排序性能对比如下，有些排序未详细介绍，暂且放到这里。实例测试结果可以看这里：<a href="https://github.com/iTimeTraveler/SortAlgorithms/blob/master/BENCH_RESULT.md" target="_blank" rel="noopener"><strong>八大排序算法耗时对比</strong></a>。</p>
+        <p><a href="https://itimetraveler.github.io/gallery/sort-algorithms/Selection-Sort-Animation.gif" target="_blank" rel="noopener"><img src="https://itimetraveler.github.io/gallery/sort-algorithms/Selection-Sort-Animation.gif" alt="img"></a></p>
+<blockquote>
+<p>“选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。”)选择排序的示例动画。红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。</p>
 </blockquote>
+<p>从算法逻辑上看，选择排序是一种简单直观的排序算法，在简单选择排序过程中，所需移动记录的次数比较少。</p>
         
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 总结/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 简单选择排序/#more">展开全文 >></a>
         
       
 
@@ -236,14 +238,14 @@
 
 
   
-    <article id="post-Java 排序算法 — 快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java 排序算法 — 直接插入排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/09/10/Java 排序算法 — 快速排序/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:30:38.744Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/09/10/Java 排序算法 — 直接插入排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T03:58:29.169Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -252,14 +254,15 @@
 	<center><p>
   
     <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 快速排序/">Java 排序算法 — 快速排序</a>
+      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 直接插入排序/">Java 排序算法 — 直接插入排序</a>
     </h1>
   
 </p></center>
       
-        <p>快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。</p>
+        <p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
+<p>插入排序由于操作不尽相同, 可分为 <code>直接插入排序</code> , <code>折半插入排序</code>(又称二分插入排序), <code>链表插入排序</code> , <code>希尔排序</code> 。我们先来看下直接插入排序。</p>
         
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 快速排序/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 直接插入排序/#more">展开全文 >></a>
         
       
 
@@ -311,7 +314,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 

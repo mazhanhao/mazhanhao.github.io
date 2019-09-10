@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://mazhanhao.top">
-  <title>Dr.Ma&#39;s Blog</title>
+  <title>Java 排序算法 — 归并排序 | Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dr.Ma&#39;s Blog">
-<meta property="og:url" content="http://mazhanhao.top/index.html">
+  <meta name="description" content="归并排序是建立在归并操作上的一种有效的排序算法，1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。">
+<meta name="keywords" content="Java排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 排序算法 — 归并排序">
+<meta property="og:url" content="http://mazhanhao.top/2019/09/10/Java 排序算法 — 归并排序/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="归并排序是建立在归并操作上的一种有效的排序算法，1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/2016-07-15_%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/merging-sort.gif">
+<meta property="og:updated_time" content="2019-09-10T04:38:54.210Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dr.Ma&#39;s Blog">
-<meta name="twitter:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="Java 排序算法 — 归并排序">
+<meta name="twitter:description" content="归并排序是建立在归并操作上的一种有效的排序算法，1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。">
+<meta name="twitter:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/2016-07-15_%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
   
@@ -159,16 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java 排序算法 — 总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java 排序算法 — 归并排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/09/10/Java 排序算法 — 总结/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:33:52.144Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/09/10/Java 排序算法 — 归并排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T04:30:31.111Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -176,20 +179,97 @@
     <div class="article-entry" itemprop="articleBody">
 	<center><p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 总结/">Java 排序算法 — 总结</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      Java 排序算法 — 归并排序
     </h1>
   
 </p></center>
       
-        <blockquote>
-<p>各种排序性能对比如下，有些排序未详细介绍，暂且放到这里。实例测试结果可以看这里：<a href="https://github.com/iTimeTraveler/SortAlgorithms/blob/master/BENCH_RESULT.md" target="_blank" rel="noopener"><strong>八大排序算法耗时对比</strong></a>。</p>
+        <p>归并排序是建立在归并操作上的一种有效的排序算法，1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。</p>
+<a id="more"></a>
+
+<h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p>归并排序算法是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列。</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/2016-07-15_归并排序.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/2016-07-15_%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif" alt="这个图很有概括性，来自维基"></a></p>
+<h2 id="2、算法描述"><a href="#2、算法描述" class="headerlink" title="2、算法描述"></a>2、算法描述</h2><p><strong>归并排序可通过两种方式实现：</strong></p>
+<ul>
+<li>自上而下的递归</li>
+<li>自下而上的迭代</li>
+</ul>
+<p><strong>一、递归法</strong>（假设序列共有n个元素）：</p>
+<p>①. 将序列每相邻两个数字进行归并操作，形成 floor(n/2)个序列，排序后每个序列包含两个元素；<br> ②. 将上述序列再次归并，形成 floor(n/4)个序列，每个序列包含四个元素；<br> ③. 重复步骤②，直到所有元素排序完毕。</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/merging-sort.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/merging-sort.gif" alt="img"></a></p>
+<p><strong>二、迭代法</strong></p>
+<p>①. 申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列<br> ②. 设定两个指针，最初位置分别为两个已经排序序列的起始位置<br> ③. 比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置<br> ④. 重复步骤③直到某一指针到达序列尾<br> ⑤. 将另一序列剩下的所有元素直接复制到合并序列尾</p>
+<h2 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h2><p>归并排序其实要做两件事：</p>
+<ul>
+<li>分解：将序列每次折半拆分</li>
+<li>合并：将划分后的序列段两两排序合并</li>
+</ul>
+<p>因此，归并排序实际上就是两个操作，拆分+合并</p>
+<p><strong>如何合并？</strong></p>
+<p>L[first…mid]为第一段，L[mid+1…last]为第二段，并且两端已经有序，现在我们要将两端合成达到L[first…last]并且也有序。</p>
+<p>首先依次从第一段与第二段中取出元素比较，将较小的元素赋值给temp[]<br> 重复执行上一步，当某一段赋值结束，则将另一段剩下的元素赋值给temp[]<br> 此时将temp[]中的元素复制给L[]，则得到的L[first…last]有序</p>
+<p><strong>如何分解？</strong></p>
+<p>在这里，我们采用递归的方法，首先将待排序列分成A,B两组；然后重复对A、B序列<br> 分组；直到分组后组内只有一个元素，此时我们认为组内所有元素有序，则分组结束。</p>
+<p>这里我写了递归算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 归并排序（递归）</span><br><span class="line"> *</span><br><span class="line"> * ①. 将序列每相邻两个数字进行归并操作，形成 floor(n/2)个序列，排序后每个序列包含两个元素；</span><br><span class="line"> * ②. 将上述序列再次归并，形成 floor(n/4)个序列，每个序列包含四个元素；</span><br><span class="line"> * ③. 重复步骤②，直到所有元素排序完毕。</span><br><span class="line"> * @param arr    待排序数组</span><br><span class="line"> */</span><br><span class="line">public static int[] mergingSort(int[] arr)&#123;</span><br><span class="line"> if(arr.length &lt;= 1) return arr;</span><br><span class="line"></span><br><span class="line"> int num = arr.length &gt;&gt; 1;</span><br><span class="line"> int[] leftArr = Arrays.copyOfRange(arr, 0, num);</span><br><span class="line"> int[] rightArr = Arrays.copyOfRange(arr, num, arr.length);</span><br><span class="line"> System.out.println(&quot;split two array: &quot; + Arrays.toString(leftArr) + &quot; And &quot; + Arrays.toString(rightArr));</span><br><span class="line"> return mergeTwoArray(mergingSort(leftArr), mergingSort(rightArr));      //不断拆分为最小单元，再排序合并</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static int[] mergeTwoArray(int[] arr1, int[] arr2)&#123;</span><br><span class="line"> int i = 0, j = 0, k = 0;</span><br><span class="line"> int[] result = new int[arr1.length + arr2.length];  //申请额外的空间存储合并之后的数组</span><br><span class="line"> while(i &lt; arr1.length &amp;&amp; j &lt; arr2.length)&#123;      //选取两个序列中的较小值放入新数组</span><br><span class="line"> if(arr1[i] &lt;= arr2[j])&#123;</span><br><span class="line"> result[k++] = arr1[i++];</span><br><span class="line"> &#125;else&#123;</span><br><span class="line"> result[k++] = arr2[j++];</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> while(i &lt; arr1.length)&#123;     //序列1中多余的元素移入新数组</span><br><span class="line"> result[k++] = arr1[i++];</span><br><span class="line"> &#125;</span><br><span class="line"> while(j &lt; arr2.length)&#123;     //序列2中多余的元素移入新数组</span><br><span class="line"> result[k++] = arr2[j++];</span><br><span class="line"> &#125;</span><br><span class="line"> System.out.println(&quot;Merging: &quot; + Arrays.toString(result));</span><br><span class="line"> return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由上, 长度为n的数组, 最终会调用mergeSort函数2n-1次。<strong>通过自上而下的递归实现的归并排序, 将存在堆栈溢出的风险。</strong></p>
+<p>以下是归并排序算法复杂度:</p>
+<table>
+<thead>
+<tr>
+<th>平均时间复杂度</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(nlog₂n)</td>
+<td>O(nlog₂n)</td>
+<td>O(nlog₂n)</td>
+<td>O(n)</td>
+</tr>
+</tbody></table>
+<p>从效率上看，归并排序可算是排序算法中的”佼佼者”. 假设数组长度为n，那么拆分数组共需logn，, 又每步都是一个普通的合并子数组的过程，  时间复杂度为O(n)， 故其综合时间复杂度为O(nlogn)。另一方面， 归并排序多次递归过程中拆分的子数组需要保存在内存空间，  其空间复杂度为O(n)。</p>
+<blockquote>
+<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是<code>O(n log n）</code>的时间复杂度。代价是需要额外的内存空间。</p>
 </blockquote>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 总结/#more">展开全文 >></a>
-        
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -211,10 +291,82 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mazhanhao.top/2019/09/10/Java 排序算法 — 归并排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/10/Java 排序算法 — 快速排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java 排序算法 — 快速排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/10/Java 排序算法 — 基数排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 排序算法 — 基数排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -234,85 +386,14 @@
 
 
 
-
-  
-    <article id="post-Java 排序算法 — 快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/09/10/Java 排序算法 — 快速排序/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:30:38.744Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 快速排序/">Java 排序算法 — 快速排序</a>
-    </h1>
-  
-</p></center>
-      
-        <p>快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。</p>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 快速排序/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -335,8 +416,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://mazhanhao.top">
-  <title>Dr.Ma&#39;s Blog</title>
+  <title>Java 排序算法 — 快速排序 | Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dr.Ma&#39;s Blog">
-<meta property="og:url" content="http://mazhanhao.top/index.html">
+  <meta name="description" content="快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。">
+<meta name="keywords" content="Java排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 排序算法 — 快速排序">
+<meta property="og:url" content="http://mazhanhao.top/2019/09/10/Java 排序算法 — 快速排序/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/Sorting_quicksort_anim.gif">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/quick-sort09.gif">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/200px-Partition_example.svg.png">
+<meta property="og:updated_time" content="2019-09-10T04:39:11.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dr.Ma&#39;s Blog">
-<meta name="twitter:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="Java 排序算法 — 快速排序">
+<meta name="twitter:description" content="快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。">
+<meta name="twitter:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/Sorting_quicksort_anim.gif">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
   
@@ -159,84 +165,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java 排序算法 — 总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/09/10/Java 排序算法 — 总结/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:33:52.144Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 总结/">Java 排序算法 — 总结</a>
-    </h1>
-  
-</p></center>
-      
-        <blockquote>
-<p>各种排序性能对比如下，有些排序未详细介绍，暂且放到这里。实例测试结果可以看这里：<a href="https://github.com/iTimeTraveler/SortAlgorithms/blob/master/BENCH_RESULT.md" target="_blank" rel="noopener"><strong>八大排序算法耗时对比</strong></a>。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 总结/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java 排序算法 — 快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java 排序算法 — 快速排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -251,18 +180,85 @@
     <div class="article-entry" itemprop="articleBody">
 	<center><p>
   
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 快速排序/">Java 排序算法 — 快速排序</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      Java 排序算法 — 快速排序
     </h1>
   
 </p></center>
       
         <p>快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。</p>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 快速排序/#more">展开全文 >></a>
-        
+<a id="more"></a>
+
+<h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p>快速排序的基本思想：<strong>挖坑填数+分治法</strong>。</p>
+<p>首先选一个轴值(pivot，也有叫基准的)，通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/Sorting_quicksort_anim.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/Sorting_quicksort_anim.gif" alt="使用快速排序法对一列数字进行排序的过程"></a></p>
+<h2 id="2、算法描述"><a href="#2、算法描述" class="headerlink" title="2、算法描述"></a>2、算法描述</h2><p>快速排序使用分治策略来把一个序列（list）分为两个子序列（sub-lists）。步骤为：</p>
+<p>①. 从数列中挑出一个元素，称为”基准”（pivot）。<br> ②. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。<br> ③. 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</p>
+<p>递归到最底部时，数列的大小是零或一，也就是已经排序好了。这个算法一定会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/quick-sort09.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/quick-sort09.gif" alt="img"></a></p>
+<h2 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h2><p>用伪代码描述如下：</p>
+<p>①. <code>i = L; j = R;</code> 将基准数挖出形成第一个坑<code>a[i]</code>。<br> ②．<code>j--</code>，由后向前找比它小的数，找到后挖出此数填前一个坑<code>a[i]</code>中。<br> ③．<code>i++</code>，由前向后找比它大的数，找到后也挖出此数填到前一个坑<code>a[j]</code>中。<br> ④．再重复执行②，③二步，直到<code>i==j</code>，将基准数填入<code>a[i]</code>中</p>
+<p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/200px-Partition_example.svg.png" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf/200px-Partition_example.svg.png" alt="img"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"> /**</span><br><span class="line"> * 快速排序（递归）</span><br><span class="line"> *</span><br><span class="line"> * ①. 从数列中挑出一个元素，称为&quot;基准&quot;（pivot）。</span><br><span class="line"> * ②. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</span><br><span class="line"> * ③. 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</span><br><span class="line"> * @param arr   待排序数组</span><br><span class="line"> * @param low   左边界</span><br><span class="line"> * @param high  右边界</span><br><span class="line"> */</span><br><span class="line">public static void quickSort(int[] arr, int low, int high)&#123;</span><br><span class="line"> if(arr.length &lt;= 0) return;</span><br><span class="line"> if(low &gt;= high) return;</span><br><span class="line"> int left = low;</span><br><span class="line"> int right = high;</span><br><span class="line"></span><br><span class="line"> int temp = arr[left];   //挖坑1：保存基准的值</span><br><span class="line"> while (left &lt; right)&#123;</span><br><span class="line"> while(left &lt; right &amp;&amp; arr[right] &gt;= temp)&#123;  //坑2：从后向前找到比基准小的元素，插入到基准位置坑1中</span><br><span class="line"> right--;</span><br><span class="line"> &#125;</span><br><span class="line"> arr[left] = arr[right];</span><br><span class="line"> while(left &lt; right &amp;&amp; arr[left] &lt;= temp)&#123;   //坑3：从前往后找到比基准大的元素，放到刚才挖的坑2中</span><br><span class="line"> left++;</span><br><span class="line"> &#125;</span><br><span class="line"> arr[right] = arr[left];</span><br><span class="line"> &#125;</span><br><span class="line"> arr[left] = temp;   //基准值填补到坑3中，准备分治递归快排</span><br><span class="line"> System.out.println(&quot;Sorting: &quot; + Arrays.toString(arr));</span><br><span class="line"> quickSort(arr, low, left-1);</span><br><span class="line"> quickSort(arr, left+1, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是递归版的快速排序：通过把基准temp插入到合适的位置来实现分治，并递归地对分治后的两个划分继续快排。那么非递归版的快排如何实现呢？</p>
+<p>因为<strong>递归的本质是栈</strong>，所以我们非递归实现的过程中，可以借助栈来保存中间变量就可以实现非递归了。在这里中间变量也就是通过Pritation函数划分区间之后分成左右两部分的首尾指针，只需要保存这两部分的首尾指针即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 快速排序（非递归）</span><br><span class="line"> *</span><br><span class="line"> * ①. 从数列中挑出一个元素，称为&quot;基准&quot;（pivot）。</span><br><span class="line"> * ②. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</span><br><span class="line"> * ③. 把分区之后两个区间的边界（low和high）压入栈保存，并循环①、②步骤</span><br><span class="line"> * @param arr   待排序数组</span><br><span class="line"> */</span><br><span class="line">public static void quickSortByStack(int[] arr)&#123;</span><br><span class="line"> if(arr.length &lt;= 0) return;</span><br><span class="line"> Stack&lt;Integer&gt; stack = new Stack&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"> //初始状态的左右指针入栈</span><br><span class="line"> stack.push(0);</span><br><span class="line"> stack.push(arr.length - 1);</span><br><span class="line"> while(!stack.isEmpty())&#123;</span><br><span class="line"> int high = stack.pop();     //出栈进行划分</span><br><span class="line"> int low = stack.pop();</span><br><span class="line"></span><br><span class="line"> int pivotIdx = partition(arr, low, high);</span><br><span class="line"></span><br><span class="line"> //保存中间变量</span><br><span class="line"> if(pivotIdx &gt; low) &#123;</span><br><span class="line"> stack.push(low);</span><br><span class="line"> stack.push(pivotIdx - 1);</span><br><span class="line"> &#125;</span><br><span class="line"> if(pivotIdx &lt; high &amp;&amp; pivotIdx &gt;= 0)&#123;</span><br><span class="line"> stack.push(pivotIdx + 1);</span><br><span class="line"> stack.push(high);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static int partition(int[] arr, int low, int high)&#123;</span><br><span class="line"> if(arr.length &lt;= 0) return -1;</span><br><span class="line"> if(low &gt;= high) return -1;</span><br><span class="line"> int l = low;</span><br><span class="line"> int r = high;</span><br><span class="line"></span><br><span class="line"> int pivot = arr[l];    //挖坑1：保存基准的值</span><br><span class="line"> while(l &lt; r)&#123;</span><br><span class="line"> while(l &lt; r &amp;&amp; arr[r] &gt;= pivot)&#123;  //坑2：从后向前找到比基准小的元素，插入到基准位置坑1中</span><br><span class="line"> r--;</span><br><span class="line"> &#125;</span><br><span class="line"> arr[l] = arr[r];</span><br><span class="line"> while(l &lt; r &amp;&amp; arr[l] &lt;= pivot)&#123;   //坑3：从前往后找到比基准大的元素，放到刚才挖的坑2中</span><br><span class="line"> l++;</span><br><span class="line"> &#125;</span><br><span class="line"> arr[r] = arr[l];</span><br><span class="line"> &#125;</span><br><span class="line"> arr[l] = pivot;   //基准值填补到坑3中，准备分治递归快排</span><br><span class="line"> return l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>快速排序是通常被认为在同数量级（O(nlog2n)）的排序方法中平均性能最好的。但若初始序列按关键码有序或基本有序时，快排序反而蜕化为冒泡排序。为改进之，通常以“三者取中法”来选取基准记录，即将排序区间的两个端点与中点三个记录关键码居中的调整为支点记录。快速排序是一个不稳定的排序方法。</p>
+<p>以下是快速排序算法复杂度:</p>
+<table>
+<thead>
+<tr>
+<th>平均时间复杂度</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(nlog₂n)</td>
+<td>O(nlog₂n)</td>
+<td>O(n²)</td>
+<td>O(1)（原地分区递归版）</td>
+</tr>
+</tbody></table>
+<p>快速排序排序效率非常高。 虽然它运行最糟糕时将达到O(n²)的时间复杂度, 但通常平均来看, 它的时间复杂为O(nlogn),  比同样为O(nlogn)时间复杂度的归并排序还要快. 快速排序似乎更偏爱乱序的数列, 越是乱序的数列, 它相比其他排序而言, 相对效率更高.</p>
+<p>Tips: 同选择排序相似, 快速排序每次交换的元素都有可能不是相邻的, 因此它有可能打破原来值为相同的元素之间的顺序. 因此, 快速排序并不稳定.</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -284,10 +280,82 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mazhanhao.top/2019/09/10/Java 排序算法 — 快速排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/10/Java 排序算法 — 总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java 排序算法 — 总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/10/Java 排序算法 — 归并排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 排序算法 — 归并排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -307,12 +375,14 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+
   
 
 
@@ -335,8 +405,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
