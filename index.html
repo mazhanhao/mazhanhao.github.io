@@ -188,6 +188,8 @@
 
 
 
+
+
 <h1 id="个人信息-Personal-information"><a href="#个人信息-Personal-information" class="headerlink" title="个人信息/Personal information"></a>个人信息/Personal information</h1><ul>
 <li>籍贯：陕西咸阳</li>
 <li>个人博客：<a href="http://www.mazhanhao.top" target="_blank" rel="noopener">www.mazhanhao.top</a></li>
@@ -218,9 +220,13 @@
 </tbody></table>
 <p><strong>主修课程：</strong></p>
 <p>C语言程序设计、 Java程序设计、数据库原理与应用、数据结构、计算机网络、操作系统等；</p>
-<h1 id="奖项证书"><a href="#奖项证书" class="headerlink" title="奖项证书"></a>奖项证书</h1><p>1.获得国家英语四级证书</p>
+<hr>
+<h1 id="奖项证书-Award"><a href="#奖项证书-Award" class="headerlink" title="奖项证书/Award"></a>奖项证书/Award</h1><p>1.获得国家英语四级证书</p>
 <p>2.获得计算机设计大赛国家三等奖</p>
-<h1 id="实践经历"><a href="#实践经历" class="headerlink" title="实践经历"></a>实践经历</h1><p>2019.07 -  2019.08   西安软通动力</p>
+<hr>
+<h1 id="实践经历-Experience"><a href="#实践经历-Experience" class="headerlink" title="实践经历/Experience"></a>实践经历/Experience</h1><p>2019.07 -  2019.08   西安软通动力</p>
+<hr>
+<h1 id="个人评价"><a href="#个人评价" class="headerlink" title="个人评价"></a>个人评价</h1><p>√ </p>
 
       
 
@@ -575,13 +581,30 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 马展豪
-    	</div>
-      	<div class="footer-right">
-      好好学习，天天向上！
-      	</div>
-    </div>
+        <div class="footer-left">
+            &copy; 2019 马展豪 
+        </div>
+        <div class="footer-right">
+            <a href="#" target="_blank"> 与你相遇很幸运 >>> Mzh Always Love Lh</a>
+        </div>
+        </div>
+        <a href=""><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> </span> </a>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("11/1/2017 00:00:00");
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "Mzh和Lh一起走过了 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
   </div>
 </footer>
     </div>
@@ -660,10 +683,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Java排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简历</a>
               </li>
             
             <div class="clearfix"></div>
