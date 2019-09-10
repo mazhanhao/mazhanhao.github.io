@@ -161,14 +161,14 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Java 排序算法 — 归并排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java 排序算法 — 希尔排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/09/10/Java 排序算法 — 归并排序/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:30:31.111Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/09/10/Java 排序算法 — 希尔排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T03:58:29.169Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -177,14 +177,15 @@
 	<center><p>
   
     <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 归并排序/">Java 排序算法 — 归并排序</a>
+      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 希尔排序/">Java 排序算法 — 希尔排序</a>
     </h1>
   
 </p></center>
       
-        <p>归并排序是建立在归并操作上的一种有效的排序算法，1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。</p>
+        <p>希尔排序，也称<strong>递减增量排序算法</strong>，1959年Shell发明。是插入排序的一种高速而稳定的改进版本。</p>
+<p>希尔排序是先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
         
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 归并排序/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 希尔排序/#more">展开全文 >></a>
         
       
 
@@ -234,14 +235,14 @@
 
 
   
-    <article id="post-Java 排序算法 — 基数排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java 排序算法 — 直接插入排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
         
-        <a href="/2019/09/10/Java 排序算法 — 基数排序/" class="archive-article-date">
-  	<time datetime="2019-09-10T04:30:10.213Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/09/10/Java 排序算法 — 直接插入排序/" class="archive-article-date">
+  	<time datetime="2019-09-10T03:58:29.169Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
 </a>
         
       </header>
@@ -250,15 +251,166 @@
 	<center><p>
   
     <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 基数排序/">Java 排序算法 — 基数排序</a>
+      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 直接插入排序/">Java 排序算法 — 直接插入排序</a>
     </h1>
   
 </p></center>
       
-        <p>基数排序的发明可以追溯到1887年赫尔曼·何乐礼在打孔卡片制表机（Tabulation Machine）, 排序器每次只能看到一个列。它是基于元素值的每个位上的字符来排序的。 对于数字而言就是分别基于个位，十位， 百位或千位等等数字来排序。</p>
-<p>基数排序（Radix sort）是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
+        <p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
+<p>插入排序由于操作不尽相同, 可分为 <code>直接插入排序</code> , <code>折半插入排序</code>(又称二分插入排序), <code>链表插入排序</code> , <code>希尔排序</code> 。我们先来看下直接插入排序。</p>
         
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 基数排序/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 直接插入排序/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java排序算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java 排序算法 — 冒泡排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+        
+        <a href="/2019/09/02/Java 排序算法 — 冒泡排序/" class="archive-article-date">
+  	<time datetime="2019-09-02T10:26:15.333Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+	<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2019/09/02/Java 排序算法 — 冒泡排序/">Java 排序算法 — 冒泡排序</a>
+    </h1>
+  
+</p></center>
+      
+        <h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p>冒泡排序（Bubble  Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+        
+          <a class="article-more-a" href="/2019/09/02/Java 排序算法 — 冒泡排序/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java排序算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java 排序算法 — 堆排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+        
+        <a href="/2019/08/30/Java 排序算法 — 堆排序/" class="archive-article-date">
+  	<time datetime="2019-08-30T07:17:51.841Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+	<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2019/08/30/Java 排序算法 — 堆排序/">Java 排序算法 — 堆排序</a>
+    </h1>
+  
+</p></center>
+      
+        <blockquote>
+<p>1991年的计算机先驱奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德(Robert W．Floyd) 和威廉姆斯(J．Williams) 在1964年共同发明了著名的堆排序算法(Heap Sort).</p>
+</blockquote>
+<p>堆的定义如下：nn个元素的序列 {k1,k2,···,kn}{k1,k2,···,kn} 当且仅当满足下关系时，称之为堆。</p>
+<p>{kiki⩽k2i⩽k2i+1或{kiki⩾k2i⩾k2i+1(i=1,2,···,⌊n2⌋){ki⩽k2iki⩽k2i+1或{ki⩾k2iki⩾k2i+1(i=1,2,···,⌊n2⌋)</p>
+<p>把此序列对应的二维数组看成一个完全二叉树。那么堆的含义就是：<strong>完全二叉树中任何一个非叶子节点的值均不大于（或不小于）其左，右孩子节点的值。</strong> 由上述性质可知大顶堆的堆顶的关键字肯定是所有关键字中最大的，小顶堆的堆顶的关键字是所有关键字中最小的。因此我们可使用大顶堆进行升序排序, 使用小顶堆进行降序排序。</p>
+        
+          <a class="article-more-a" href="/2019/08/30/Java 排序算法 — 堆排序/#more">展开全文 >></a>
         
       
 
@@ -310,7 +462,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
