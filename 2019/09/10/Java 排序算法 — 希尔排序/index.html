@@ -8,16 +8,19 @@
   <link rel="dns-prefetch" href="http://mazhanhao.top">
   <title>Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
+  <meta name="description" content="Java 排序算法 — 希尔排序希尔排序，也称递减增量排序算法，1959年Shell发明。是插入排序的一种高速而稳定的改进版本。 希尔排序是先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Dr.Ma&#39;s Blog">
-<meta property="og:url" content="http://mazhanhao.top/index.html">
+<meta property="og:url" content="http://mazhanhao.top/2019/09/10/Java 排序算法 — 希尔排序/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="Java 排序算法 — 希尔排序希尔排序，也称递减增量排序算法，1959年Shell发明。是插入排序的一种高速而稳定的改进版本。 希尔排序是先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//shell-sort.jpg">
+<meta property="og:updated_time" content="2019-09-10T04:13:31.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dr.Ma&#39;s Blog">
-<meta name="twitter:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:description" content="Java 排序算法 — 希尔排序希尔排序，也称递减增量排序算法，1959年Shell发明。是插入排序的一种高速而稳定的改进版本。 希尔排序是先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。">
+<meta name="twitter:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//shell-sort.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
   
@@ -159,9 +162,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java 排序算法 — 希尔排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java 排序算法 — 希尔排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -170,11 +171,71 @@
         <hr>
 <h2 id="Java-排序算法-—-希尔排序"><a href="#Java-排序算法-—-希尔排序" class="headerlink" title="Java 排序算法 — 希尔排序"></a>Java 排序算法 — 希尔排序</h2><p>希尔排序，也称<strong>递减增量排序算法</strong>，1959年Shell发明。是插入排序的一种高速而稳定的改进版本。</p>
 <p>希尔排序是先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 希尔排序/#more">展开全文 >></a>
-        
+<a id="more"></a>
+
+<h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//shell-sort.jpg" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//shell-sort.jpg" alt="img"></a></p>
+<p>将待排序数组按照步长gap进行分组，然后将每组的元素利用直接插入排序的方法进行排序；每次再将gap折半减小，循环上述操作；当gap=1时，利用直接插入，完成排序。</p>
+<p>可以看到步长的选择是希尔排序的重要部分。只要最终步长为1任何步长序列都可以工作。一般来说最简单的步长取值是<strong>初次取数组长度的一半</strong>为增量，之后每次再减半，直到增量为1。更好的步长序列取值可以参考<a href="https://zh.wikipedia.org/wiki/希尔排序#.E6.AD.A5.E9.95.BF.E5.BA.8F.E5.88.97" target="_blank" rel="noopener">维基百科</a>。</p>
+<h2 id="2、算法描述"><a href="#2、算法描述" class="headerlink" title="2、算法描述"></a>2、算法描述</h2><p>①. 选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1；（<strong>一般初次取数组半长，之后每次再减半，直到增量为1</strong>）<br> ②. 按增量序列个数k，对序列进行k 趟排序；<br> ③. 每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子表进行直接插入排序。仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</p>
+<h2 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h2><p>以下是我自己的实现，可以看到实现很幼稚，但是好处是理解起来很简单。因为没有经过任何的优化，所以不建议大家直接使用。建议对比下方的维基百科官方实现代码，特别是步长取值策略部分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 希尔排序</span><br><span class="line"> *</span><br><span class="line"> * 1\. 选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1；（一般初次取数组半长，之后每次再减半，直到增量为1）</span><br><span class="line"> * 2\. 按增量序列个数k，对序列进行k 趟排序；</span><br><span class="line"> * 3\. 每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子表进行直接插入排序。</span><br><span class="line"> *    仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</span><br><span class="line"> * @param arr  待排序数组</span><br><span class="line"> */</span><br><span class="line">public static void shellSort(int[] arr)&#123;</span><br><span class="line"> int gap = arr.length / 2;</span><br><span class="line"> for (; gap &gt; 0; gap /= 2) &#123;      //不断缩小gap，直到1为止</span><br><span class="line"> for (int j = 0; (j+gap) &lt; arr.length; j++)&#123;     //使用当前gap进行组内插入排序</span><br><span class="line"> for(int k = 0; (k+gap)&lt; arr.length; k += gap)&#123;</span><br><span class="line"> if(arr[k] &gt; arr[k+gap]) &#123;</span><br><span class="line"> int temp = arr[k+gap];      //交换操作</span><br><span class="line"> arr[k+gap] = arr[k];</span><br><span class="line"> arr[k] = temp;</span><br><span class="line"> System.out.println(&quot;    Sorting:  &quot; + Arrays.toString(arr));</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<p>①. 第一层for循环表示一共有多少个增量。增量的序列的个数，就是希尔排序的趟数。上面的增量序列为： <code>arr.length/2, arr.length/2/2, arr.length/2/2/2, .... 2, 1</code><br> ②. 里层的两个for循环，实际上就是以一个gap拆分为一组的<strong>组内插入排序</strong>。</p>
+<p>下面是维基百科官方实现，大家注意gap步长取值部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 希尔排序（Wiki官方版）</span><br><span class="line"> *</span><br><span class="line"> * 1\. 选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1；（注意此算法的gap取值）</span><br><span class="line"> * 2\. 按增量序列个数k，对序列进行k 趟排序；</span><br><span class="line"> * 3\. 每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子表进行直接插入排序。</span><br><span class="line"> *    仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</span><br><span class="line"> * @param arr  待排序数组</span><br><span class="line"> */</span><br><span class="line">public static void shell_sort(int[] arr) &#123;</span><br><span class="line"> int gap = 1, i, j, len = arr.length;</span><br><span class="line"> int temp;</span><br><span class="line"> while (gap &lt; len / 3)</span><br><span class="line"> gap = gap * 3 + 1;      // &lt;O(n^(3/2)) by Knuth,1973&gt;: 1, 4, 13, 40, 121, ...</span><br><span class="line"> for (; gap &gt; 0; gap /= 3) &#123;</span><br><span class="line"> for (i = gap; i &lt; len; i++) &#123;</span><br><span class="line"> temp = arr[i];</span><br><span class="line"> for (j = i - gap; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j -= gap)</span><br><span class="line"> arr[j + gap] = arr[j];</span><br><span class="line"> arr[j + gap] = temp;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下是希尔排序复杂度:</p>
+<table>
+<thead>
+<tr>
+<th>平均时间复杂度</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(nlog2 n)</td>
+<td>O(nlog2 n)</td>
+<td>O(nlog2 n)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -185,10 +246,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mazhanhao.top/2019/09/10/Java 排序算法 — 希尔排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/10/Java 排序算法 — 直接插入排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 排序算法 — 直接插入排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -208,75 +332,14 @@
 
 
 
-
-  
-    <article id="post-Java 排序算法 — 直接插入排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/09/10/Java 排序算法 — 直接插入排序/" class="archive-article-date">
-  	<time datetime="2019-09-10T03:58:29.169Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2019/09/10/Java 排序算法 — 直接插入排序/">Java 排序算法 — 直接插入排序</a>
-    </h1>
-  
-</p></center>
-      
-        <p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
-<p>插入排序由于操作不尽相同, 可分为 <code>直接插入排序</code> , <code>折半插入排序</code>(又称二分插入排序), <code>链表插入排序</code> , <code>希尔排序</code> 。我们先来看下直接插入排序。</p>
-        
-          <a class="article-more-a" href="/2019/09/10/Java 排序算法 — 直接插入排序/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -299,8 +362,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://mazhanhao.top">
   <title>Java 排序算法 — 直接插入排序 | Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="出处：https://github.com/iTimeTraveler/SortAlgorithms 插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相">
+  <meta name="description" content="插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相同, 可分为 直接插入排序 , 折半插入排序(又称二分插入排序), 链表插入排序 , 希尔排序 。我们">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 排序算法 — 直接插入排序">
 <meta property="og:url" content="http://mazhanhao.top/2019/09/10/Java 排序算法 — 直接插入排序/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="出处：https://github.com/iTimeTraveler/SortAlgorithms 插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相">
+<meta property="og:description" content="插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相同, 可分为 直接插入排序 , 折半插入排序(又称二分插入排序), 链表插入排序 , 希尔排序 。我们">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif">
 <meta property="og:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//insert-sort.gif">
-<meta property="og:updated_time" content="2019-09-10T04:01:51.789Z">
+<meta property="og:updated_time" content="2019-09-10T04:09:02.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 排序算法 — 直接插入排序">
-<meta name="twitter:description" content="出处：https://github.com/iTimeTraveler/SortAlgorithms 插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相">
+<meta name="twitter:description" content="插入排序的设计初衷是往有序的数组中快速插入一个新的元素。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的. 插入排序由于操作不尽相同, 可分为 直接插入排序 , 折半插入排序(又称二分插入排序), 链表插入排序 , 希尔排序 。我们">
 <meta name="twitter:image" content="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
@@ -184,9 +184,10 @@
   
 </p></center>
       
-        <p>出处：<a href="https://github.com/iTimeTraveler/SortAlgorithms" target="_blank" rel="noopener">https://github.com/iTimeTraveler/SortAlgorithms</a></p>
-<p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
+        <p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
 <p>插入排序由于操作不尽相同, 可分为 <code>直接插入排序</code> , <code>折半插入排序</code>(又称二分插入排序), <code>链表插入排序</code> , <code>希尔排序</code> 。我们先来看下直接插入排序。</p>
+<a id="more"></a>
+
 <h2 id="1、基本思想"><a href="#1、基本思想" class="headerlink" title="1、基本思想"></a>1、基本思想</h2><p>直接插入排序的基本思想是：将数组中的所有元素依次跟前面已经排好的元素相比较，如果选择的元素比已排序的元素小，则交换，直到全部元素都比较过为止。</p>
 <p><a href="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif" target="_blank" rel="noopener"><img src="https://gitee.com/chenssy/blog-home/raw/master/image/series-images/sjjg/pxsf//Insertion-sort-example-300px.gif" alt="使用插入排序为一列数字进行排序的过程"></a></p>
 <h2 id="2、算法描述"><a href="#2、算法描述" class="headerlink" title="2、算法描述"></a>2、算法描述</h2><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
@@ -327,9 +328,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/10/Java 排序算法 — 希尔排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
-    <a href="/2019/09/02/qq/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">test</div>
+  
+    <a href="/2019/09/02/Java 排序算法 — 冒泡排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 排序算法 — 冒泡排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
