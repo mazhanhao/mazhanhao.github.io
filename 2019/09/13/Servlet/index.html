@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://mazhanhao.top">
-  <title>Dr.Ma&#39;s Blog</title>
+  <title>Servlet | Dr.Ma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+  <meta name="description" content="Servlet——用于处理用户提交的数据Servlet调用流程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dr.Ma&#39;s Blog">
+<meta property="og:title" content="Servlet">
 <meta property="og:url" content="http://mazhanhao.top/2019/09/13/Servlet/index.html">
 <meta property="og:site_name" content="Dr.Ma&#39;s Blog">
-<meta property="og:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="Servlet——用于处理用户提交的数据Servlet调用流程">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-13T09:24:51.951Z">
+<meta property="og:image" content="http://stepimagewm.how2j.cn/7461.png">
+<meta property="og:updated_time" content="2019-09-13T09:43:53.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dr.Ma&#39;s Blog">
-<meta name="twitter:description" content="Dr.Ma&apos;s个人站，主要涉及知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="Servlet">
+<meta name="twitter:description" content="Servlet——用于处理用户提交的数据Servlet调用流程">
+<meta name="twitter:image" content="http://stepimagewm.how2j.cn/7461.png">
   
     <link rel="alternative" href="/atom.xml" title="Dr.Ma&#39;s Blog" type="application/atom+xml">
   
@@ -153,10 +155,40 @@
             <article id="post-Servlet" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-	<center><p></p></center>
-      
+      <header class="article-header">
         
+        
+        <a href="/2019/09/13/Servlet/" class="archive-article-date">
+  	<time datetime="2019-09-13T09:24:51.951Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+	<center><p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      Servlet
+    </h1>
+  
+</p></center>
+      
+        <h1 id="Servlet——用于处理用户提交的数据"><a href="#Servlet——用于处理用户提交的数据" class="headerlink" title="Servlet——用于处理用户提交的数据"></a>Servlet——用于处理用户提交的数据</h1><h3 id="Servlet调用流程"><a href="#Servlet调用流程" class="headerlink" title="Servlet调用流程"></a>Servlet调用流程</h3><a id="more"></a>
+
+<p><strong>步骤 1 : 流程图</strong><br><img src="http://stepimagewm.how2j.cn/7461.png" alt><br><strong>步骤 2 : login.html</strong>   </p>
+<pre><code>打开一个静态的html页面，在这个页面中可以通过form，以post的形式提交数据</code></pre><p><strong>步骤 3 : /login路径</strong>   </p>
+<pre><code>在上一步的login.html中，用form，把账号和密码，提交到/login这个路径，并且附带method=&quot;post&quot;</code></pre><p><strong>步骤 4 : 找到对应的Servlet</strong>   </p>
+<pre><code>其路径是/login，接着就到配置文件web.xml进行匹配，发现/login，对应的Servlet类是 LoginServlet。</code></pre><p>接下来的工作，就会基于这个LoginServlet进行。</p>
+<p><strong>步骤 5 : 实例化Servlet对象</strong>   </p>
+<pre><code>Tomcat 定位到了LoginServlet后，发现并没有LoginServlet的实例存在，于是就调用LoginServlet的public无参的构造方法LoginServlet()实例化一个LoginServlet对象以备后续使用</code></pre><p><strong>步骤 6 : 调用doGet或者doPost</strong>   </p>
+<pre><code>Tomcat从上一步拿到了LoginServlet的实例之后，根据页面login.html提交信息的时候带的method=&quot;post&quot;，去调用对应的doPost方法。</code></pre><p><strong>步骤 7 : request获取参数</strong>   </p>
+<pre><code>接着流程进入了doPost方法中,在这个方法中，通过参数request，把页面上传递来的账号和密码信息取出来</code></pre><p><strong>步骤 8 : response设置响应</strong>   </p>
+<pre><code>接着，根据账号和密码是否正确(判断是否是admin和123)， 创建不同的html字符串。然后把html字符串通过如下方式，设置在了response对象上。  到这里，Servlet的工作就做完了。</code></pre><p><strong>步骤 9 : tomcat把html传递给浏览器</strong>    </p>
+<pre><code>在Servlet完成工作之后，tomcat拿到被Servlet修改过的response，根据这个response生成html 字符串，然后再通过HTTP协议，这个html字符串，回发给浏览器，浏览器再根据HTTP协议获取这个html字符串，并渲染在界面上。这样在效果上，浏览器就可以看到Servlet中生成的字符串了。  </code></pre><h2 id="LoginServlet-java"><a href="#LoginServlet-java" class="headerlink" title="LoginServlet.java"></a>LoginServlet.java</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.PrintWriter;</span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.http.HttpServlet;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line">public class LoginServlet extends HttpServlet &#123;</span><br><span class="line">    protected void doPost(HttpServletRequest request, HttpServletResponse response)</span><br><span class="line">            throws ServletException, IOException &#123;</span><br><span class="line">        //获取中文的参数  request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">        request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">        String name = request.getParameter(&quot;name&quot;);</span><br><span class="line">        String password = request.getParameter(&quot;password&quot;);</span><br><span class="line">        System.out.println(&quot;name: &quot;+name);</span><br><span class="line">        System.out.println(&quot;password: &quot;+password);</span><br><span class="line">        String html = null;</span><br><span class="line">        if (&quot;admin&quot;.equals(name) &amp;&amp; &quot;123&quot;.equals(password))</span><br><span class="line">            html = &quot;&lt;div style=&apos;color:green&apos;&gt;登陆成功&lt;/div&gt;&quot;;</span><br><span class="line">        else</span><br><span class="line">            html = &quot;&lt;div style=&apos;color:red&apos;&gt;登陆失败&lt;/div&gt;&quot;;</span><br><span class="line">        //返回中文的响应  response.setContentType(&quot;text/html; charset=UTF-8&quot;);</span><br><span class="line">        response.setContentType(&quot;text/html; charset=UTF-8&quot;);</span><br><span class="line">        response.getWriter().println(html);</span><br><span class="line">//        PrintWriter pw = response.getWriter();</span><br><span class="line">//        pw.println(html);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="login-html"><a href="#login-html" class="headerlink" title="login.html"></a>login.html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;登录页面&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;login&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    账号: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt; &lt;br&gt;</span><br><span class="line">    密码: &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt; &lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
